@@ -1,0 +1,66 @@
+[
+  {
+    "id": "level_01",
+    "order": 1,
+    "title": "Body Basics",
+    "difficulty": "Easy",
+    "questionStyle": "MatchMeaning",
+    "wordIds": ["w001","w002","w003","w004","w005","w006","w007","w008"]
+  },
+  {
+    "id": "level_02",
+    "order": 2,
+    "title": "Body and Pain",
+    "difficulty": "Easy",
+    "questionStyle": "PickArticle",
+    "wordIds": ["w009","w010","w011","w012","w013","w014","w015","w016"]
+  },
+  {
+    "id": "level_03",
+    "order": 3,
+    "title": "People and Places",
+    "difficulty": "Easy",
+    "questionStyle": "Mixed",
+    "wordIds": ["w017","w018","w019","w020","w021","w022","w023","w024"]
+  },
+  {
+    "id": "level_04",
+    "order": 4,
+    "title": "Symptoms",
+    "difficulty": "Medium",
+    "questionStyle": "FillGap",
+    "wordIds": ["w025","w026","w027","w028","w029","w030","w031","w032"]
+  },
+  {
+    "id": "level_05",
+    "order": 5,
+    "title": "Ward and Equipment",
+    "difficulty": "Medium",
+    "questionStyle": "PickArticle",
+    "wordIds": ["w033","w034","w035","w036","w037","w038","w039","w040"]
+  },
+  {
+    "id": "level_06",
+    "order": 6,
+    "title": "Vital Signs and Care",
+    "difficulty": "Medium",
+    "questionStyle": "Mixed",
+    "wordIds": ["w041","w042","w043","w044","w045","w046","w047","w048"]
+  },
+  {
+    "id": "level_07",
+    "order": 7,
+    "title": "Patient Talk",
+    "difficulty": "Hard",
+    "questionStyle": "PatientSituation",
+    "wordIds": ["w049","w050","w051","w052","w053","w054","w055","w056"]
+  },
+  {
+    "id": "level_08",
+    "order": 8,
+    "title": "Handover and Reports",
+    "difficulty": "Hard",
+    "questionStyle": "FillGap",
+    "wordIds": ["w057","w058","w059","w060","w061","w062","w063","w064"]
+  }
+]
