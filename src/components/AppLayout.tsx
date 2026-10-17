@@ -17,7 +17,7 @@ export function AppLayout() {
   )
 
   return (
-    <div className="mx-auto flex min-h-full w-full max-w-lg flex-col bg-bg">
+    <div className="flex min-h-dvh w-full flex-col bg-bg">
       {useDashboard ? <DashboardShellProvider>{inner}</DashboardShellProvider> : inner}
     </div>
   )
