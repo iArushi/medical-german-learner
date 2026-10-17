@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { DashboardShell } from '../components/dashboard/DashboardShell'
 import { StreakCalendar } from '../components/profile/StreakCalendar'
 import { useLearningMode } from '../context/LearningModeContext'
 import { STREAK_AND_POINTS_CONFIG } from '../config/streakAndPoints'
@@ -61,10 +62,15 @@ export function ProfilePage() {
   }
 
   return (
-    <div className="flex min-h-full flex-col px-4 pb-4 pt-6">
-      <h1 className="text-xl font-bold text-text">Profile</h1>
+    <DashboardShell page="Progress">
+      <div className="dashboard-section-heading">
+        <div>
+          <span className="dashboard-section-kicker">Account</span>
+          <h2>Your progress</h2>
+        </div>
+      </div>
 
-      <Card className="mt-4" padding="md" variant="elevated">
+      <Card className="mt-2" padding="md" variant="elevated">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 className="text-sm font-bold text-text">Points</h2>
           <Badge variant="accent">{totalPoints} pts</Badge>
@@ -138,6 +144,6 @@ export function ProfilePage() {
       </section>
 
       <FeedbackToast message={toast} />
-    </div>
+    </DashboardShell>
   )
 }

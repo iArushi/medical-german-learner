@@ -18,6 +18,7 @@ import { EmptyState } from '../components/ui/EmptyState'
 
 import { FeedbackToast } from '../components/ui/FeedbackToast'
 
+import { DashboardShell } from '../components/dashboard/DashboardShell'
 import { PageSection } from '../components/ui/PageSection'
 
 import { buildCompeteGroups } from '../lib/competeGroups'
@@ -87,15 +88,9 @@ export function CompetePage() {
   if (!ready) {
 
     return (
-
-      <div className="flex min-h-full flex-col px-4 pb-4 pt-6">
-
-        <h1 className="text-xl font-bold text-text">Compete</h1>
-
-        <p className="mt-6 text-sm text-text-muted">Loading your group…</p>
-
-      </div>
-
+      <DashboardShell page="Compete">
+        <p className="text-sm text-text-muted">Loading your group…</p>
+      </DashboardShell>
     )
 
   }
@@ -225,10 +220,13 @@ export function CompetePage() {
 
 
   return (
-
-    <div className="flex min-h-full flex-col px-4 pb-4 pt-6">
-
-      <h1 className="text-xl font-bold text-text">Compete</h1>
+    <DashboardShell page="Compete">
+      <div className="dashboard-section-heading">
+        <div>
+          <span className="dashboard-section-kicker">Community</span>
+          <h2>Compete with learners</h2>
+        </div>
+      </div>
 
       <Card className="mt-2" padding="sm" variant="accent">
 
@@ -426,9 +424,7 @@ export function CompetePage() {
 
 
       <FeedbackToast message={toast} />
-
-    </div>
-
+    </DashboardShell>
   )
 
 }

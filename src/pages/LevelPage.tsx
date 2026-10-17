@@ -69,7 +69,7 @@ function LevelShell({ children }: { children: ReactNode }) {
         ← Home
       </Link>
       <div className="mt-3 flex flex-wrap items-center gap-2">
-        <h1 className="text-lg font-bold text-text">{level.title}</h1>
+        <h1 className="font-display text-lg font-extrabold text-text">{level.title}</h1>
         {isReview ? <ReviewLabel /> : <DifficultyLabel difficulty={level.difficulty} />}
       </div>
       <div className="mt-4 flex-1">{children}</div>
