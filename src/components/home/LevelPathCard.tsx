@@ -17,6 +17,7 @@ type LevelPathCardProps = {
   inProgress?: LevelInProgress
   isLast: boolean
   isCurrent: boolean
+  staggerIndex?: number
 }
 
 const STATUS_PILL: Record<string, string> = {
@@ -70,6 +71,7 @@ export function LevelPathCard(props: LevelPathCardProps) {
     stepNumber,
     bestPercent,
     inProgress,
+    staggerIndex = 0,
   } = props
 
   const inProgressPercent = inProgress?.combinedPercent
@@ -101,7 +103,10 @@ export function LevelPathCard(props: LevelPathCardProps) {
   )
 
   return (
-    <li className="relative flex gap-3 pb-4 last:pb-0">
+    <li
+      className="stagger-enter relative flex gap-3 pb-4 last:pb-0"
+      style={{ animationDelay: `${Math.min(staggerIndex, 8) * 45}ms` }}
+    >
       {!isLast ? (
         <span className="absolute bottom-0 left-[6px] top-10 w-0.5 bg-border" aria-hidden />
       ) : null}
@@ -111,9 +116,9 @@ export function LevelPathCard(props: LevelPathCardProps) {
         padding="md"
         variant={displayState === 'passed' ? 'flat' : 'elevated'}
         className={cn(
-          'relative ml-1 flex-1',
-          locked && 'opacity-55',
-          isCurrent && !locked && 'ring-2 ring-primary/35',
+          'path-card relative ml-1 flex-1',
+          locked && 'path-card-locked opacity-55',
+          isCurrent && !locked && 'ring-2 ring-primary/25',
         )}
         aria-disabled={locked || undefined}
       >
@@ -134,10 +139,8 @@ export function LevelPathCard(props: LevelPathCardProps) {
           ) : null}
 
           <div className="min-w-0 flex-1">
-            <p className="text-[11px] font-bold uppercase tracking-wide text-text-muted">
-              Level {stepNumber}
-            </p>
-            <p className="mt-0.5 truncate text-sm font-bold text-text">{level.title}</p>
+            <p className="section-kicker">Level {stepNumber}</p>
+            <p className="font-display mt-0.5 truncate text-sm font-bold text-text">{level.title}</p>
             {showReplayHint ? (
               <p className="mt-0.5 text-xs text-text-muted">Replay to improve</p>
             ) : null}
